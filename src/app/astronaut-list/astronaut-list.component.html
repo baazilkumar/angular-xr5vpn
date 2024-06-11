@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Astronaut Information</h1>
+      <table class="table table-striped">
+        <thead class="font-italic">
+          <tr class="row">
+            <th  class="col-6">Name</th>
+            <th  class="col-6">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr class="row" *ngFor="let aData of data">
+          <td  class="col">{{aData.name}}</td>
+          <td  class="col"><button class="btn btn-primary" (click)="toggle(aData)">{{button_name}}</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="container" *ngIf="show_view">
+      <h1 class="text-center">Astronaut Record</h1>
+      <table class="table table-striped">
+        <tr  class="row">
+          <th  class="col">Name</th>
+          <th  class="col">Images</th>
+          <th  class="col">More Information</th>
+        </tr>
+        <tr  class="row">
+          <td  class="col">{{name}}</td>
+          <td  class="col"><button class="btn btn-primary" (click)="viewImages(name)">View</button></td>
+          <td  class="col"><button class="btn btn-primary" (click)="viewInfo(name)">View</button></td>
+        </tr> 
+      </table>
+    </div>
+  </body>
+</html>
